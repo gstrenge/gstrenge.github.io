@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Garrit Strenge</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Garrit Strenge</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a href="/#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+  <!-- <header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>Garrit Strenge</h1>
+            <hr>
+            <p>Portfolio of Projects, Work Experience, and Research</p>
+            <a href="#about" class="btn btn-primary btn-xl page-scroll">About Me</a>
+        </div>
+    </div>
+</header>
+ -->
+  <section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="section-heading text-center">Car Detection Christmas Lights</h2>
+                <hr class="light">
+                <p class="text-faded">
+                    <p>For years, my dad and I have wanted to improve his Christmas light display by creating something interactive with those driving by. Over the past month, I helped him make that dream a reality. To begin, I spent free time around Thanksgiving prototyping different ways of detecting cars passing by.</p>
+
+<p>First, using ultrasonic distance sensors were tested with a simple arduino program. The sensor was setup to face perpendicular to the road, and in theory would read a closer distance value whenever a car passes by, acting as a vehicle “tripwire” that could detect cars coming from either direction based on the distance to the car. In practice, this did not work when cars drove by at speeds over 30mph, due to the relatively long timeout that the ultrasonic sensor must wait for a pulse to bounce back to its sensor.</p>
+
+<p>The next sensor tested was a photoresistor, which when included in a voltage divider circuit, an arduino can measure the amount of light that the photoresistor is experiencing. This method proved to work almost 100% of the time at night, as the contrast between ambient darkness and even the faintest of headlights is very large.</p>
+
+<p>With this complete, two small circuits with their own arduino uno and photoresistor were assembled within a waterproof transparent container, and positioned on opposite sides of the front yard to detect cars coming from their respective side. Whenever the photoresistor would stop detecting a bright light source (i.e. the car passing by the sensor), it pulls a signal wire high that can be used later on to trigger the lights.</p>
+
+<p>To actually handle the turning-on-and-off, two 8-channel relay boards were used in conjunction with an arduino Mega. These 16 relays would be connected to 16 individually spliced female AC plugs, allowing any of our existing christmas lights plugged into these plugs to be toggled on and off in a programmable light show.</p>
+
+<p>To connect everything together, two wires were connected from each sensor box to the main control box containing the arduino mega, allowing the sensor boxes to have both (1) a common ground, and (2) a their own signal wire, allowing the mega to perform different light shows based on which way the car is coming.</p>
+
+<p>In the future, I hope to improve upon this by syncing up lights with music, and making modular wireless relay boxes for more flexibility.</p>
+
+                </p>
+                
+                
+                <div>
+                    <a href="/#portfolio" class="btn btn-default btn-xl page-scroll center-block">View Other Projects</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!--<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">At Your Service</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <h3>Sturdy Templates</h3>
+                    <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <h3>Ready to Ship</h3>
+                    <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <h3>Up to Date</h3>
+                    <p class="text-muted">We update dependencies to keep things fresh.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                    <h3>Made with Love</h3>
+                    <p class="text-muted">You have to make your websites with love these days!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+  <!-- <section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Car-Detection-Christmas-Lights" class="portfolio-box">
+                    <img src="/img/portfolio/Car-Detection-Christmas-Lights.gif" class="img-responsive" alt="Car Detection Christmas Lights" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Car Detection Christmas Lights
+                            </div>
+                            <div class="project-name">
+                                Light-based headlight detection setup to trigger a custom controlled Christmas light show with 16 unique triggerable lights
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Digital-Trail-Making-Test" class="portfolio-box">
+                    <img src="/img/portfolio/Digital-Trail-Making-Test.gif" class="img-responsive" alt="Digital Trail Making Test" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Digital Trail Making Test
+                            </div>
+                            <div class="project-name">
+                                Digitized version of the common neuropsychological test, typically done on paper, to allow for widespread data collection
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Temporal-Object-Tracking" class="portfolio-box">
+                    <img src="/img/portfolio/Temporal-Object-Tracking.gif" class="img-responsive" alt="Temporal Object Tracking" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Temporal Object Tracking
+                            </div>
+                            <div class="project-name">
+                                Python OpenCV-based spherical object tracker that can keep track of individual objects even when they drop out of view.
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Smart-Bike-Lock" class="portfolio-box">
+                    <img src="/img/portfolio/Smart-Bike-Lock.png" class="img-responsive" alt="Smart Bike Lock" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Smart Bike Lock
+                            </div>
+                            <div class="project-name">
+                                Discreet Bike Lock Prototype with Motion Detection, Cut Alarm, and Preventative Alarms
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Hand-Pose-Estimation" class="portfolio-box">
+                    <img src="/img/portfolio/Hand-Pose-Estimation.gif" class="img-responsive" alt="Hand Pose Estimation" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Hand Pose Estimation
+                            </div>
+                            <div class="project-name">
+                                Machine-Learning-based Hand-Pose Estimation trained on MobileNet
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Autonomous-Navigation" class="portfolio-box">
+                    <img src="/img/portfolio/Autonomous-Navigation.gif" class="img-responsive" alt="Autonomous Navigation" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Autonomous Navigation
+                            </div>
+                            <div class="project-name">
+                                University Rover Team's Rover Driving Autonomously through gates marked with AR Tags
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Obstacle-Avoiding-Light-Seeking-Robot" class="portfolio-box">
+                    <img src="/img/portfolio/Obstacle-Avoiding-Light-Seeking-Robot.gif" class="img-responsive" alt="Obstacle Avoiding Light Seeking Robot" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Obstacle Avoiding Light Seeking Robot
+                            </div>
+                            <div class="project-name">
+                                Ultrasonic-based robot able to navigate mazes and go towards a light radiation source
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Model-Rocket" class="portfolio-box">
+                    <img src="/img/portfolio/Model-Rocket.gif" class="img-responsive" alt="Model Rocket" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Model Rocket
+                            </div>
+                            <div class="project-name">
+                                Designed Rocket from scratch, Simulated components, and launched on a team of 3 people through AeroNU
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Earthquake-Forecasting" class="portfolio-box">
+                    <img src="/img/portfolio/Earthquake-Forecasting.gif" class="img-responsive" alt="Earthquake Forcasting" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Earthquake Forcasting
+                            </div>
+                            <div class="project-name">
+                                Programmer on college team developing a containerized, redundant, and scalable system to input, store, interpret, and act on real time data in order to predict/forecast earthquakes
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Bandsaw-Safety-Device" class="portfolio-box">
+                    <img src="/img/portfolio/Bandsaw-Safety-Device.gif" class="img-responsive" alt="Bandsaw Safety Device" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Bandsaw Safety Device
+                            </div>
+                            <div class="project-name">
+                                Implements previously developed Hand Trajectory Prediction to drop guard in front of blade if a hand is predicted to collide with the blade
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Virtual-And-Augmented-Reality-Simulations" class="portfolio-box">
+                    <img src="/img/portfolio/Virtual-And-Augmented-Reality-Simulations.gif" class="img-responsive" alt="Virtual And Augmented Reality Simulations" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Virtual And Augmented Reality Simulations
+                            </div>
+                            <div class="project-name">
+                                Unity 3D Game Engine with HTC Vive and ZED Camera for Virtual Reality and Augmented Reality Simulations
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Astrophotography" class="portfolio-box">
+                    <img src="/img/portfolio/Astrophotography.gif" class="img-responsive" alt="Astrophotography" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Astrophotography
+                            </div>
+                            <div class="project-name">
+                                Photographing Deep Sky Objects (DSOs) with a 5" reflector telescope and Nikon D5000 camera
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Hand-Trajectory-Prediction" class="portfolio-box">
+                    <img src="/img/portfolio/Hand-Trajectory-Prediction.gif" class="img-responsive" alt="Hand Trajectory Prediction" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Hand Trajectory Prediction
+                            </div>
+                            <div class="project-name">
+                                Image-Processing-based hand tracking combined with physics-based trajectory prediction
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/Piano-Medley" class="portfolio-box">
+                    <img src="/img/portfolio/Piano-Medley.gif" class="img-responsive" alt="Piano Medley" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Piano Medley
+                            </div>
+                            <div class="project-name">
+                                Short Video Medley of a few iconic film scores
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-sm-6">
+                <a href="projects/3D-Game-Development" class="portfolio-box">
+                    <img src="/img/portfolio/3D-Game-Development.gif" class="img-responsive" alt="3D Game Development" onerror="this.src='img/portfolio/TBD.png'">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                3D Game Development
+                            </div>
+                            <div class="project-name">
+                                First Person Star Wars Themed Racing Game, 3D luner lander remake, and more
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+ -->
+  <!--  <aside class="bg-dark">
+      <div class="container text-center">
+          <div class="call-to-action">
+              <h2>Free Download at Start Bootstrap!</h2>
+              <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+          </div>
+      </div>
+  </aside>
+-->
+  <section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <hr class="primary">
+                <p>I am always looking to take on a new challenge. Message me on LinkedIn or send me an email below and let's get started!</p>
+            </div>
+        <div class="col-lg-2 col-lg-offset-2 text-center">
+            <a href="https://www.linkedin.com/in/garrit-strenge">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p>garrit strenge</p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="mailto:strenge.g@northeastern.edu">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p>strenge.g@northeastern.edu</p>
+            </a>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1 text-center">
+            <a href="https://github.com/gstrenge">
+            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p>gstrenge</p>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+  <!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.fittext.js"></script>
+<script src="/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/creative.js"></script>
+
+</body>
+
+</html>
